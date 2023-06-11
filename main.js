@@ -1,5 +1,7 @@
 // Se deben crear todas las restricciones en caso que los valores ingresados
 // no sean los correctos (int cuando corresponda, string cuando corresponda)
+// Faltan 5 ejercicios.
+
 
 // 1) Calcular perimetro de un cuadrado
 function calcularPerimetro() {
