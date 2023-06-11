@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Primer Semestre</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-6 text-center">Frontend 15 Ejercicios</h1>
+    <nav class="mt-4">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <span class="description">Calcula el perímetro de un cuadrado a partir de la longitud de uno de sus lados.</span>
+          <a href="#" onclick="calcularPerimetro()" class="btn btn-primary">
+            Calcular
+          </a>
+        </li>
+        <li class="list-group-item">
+          <span class="description">Calcula la suma de los dos primeros numeros y el producto del tercero y cuarto.</span>
+          <a href="#" onclick="calcularSumaProducto()" class="btn btn-primary">
+            Calcular
+          </a>
+        </li>
+        <li class="list-group-item">
+          <span class="description">Calcula la suma de cuatro numeros y el producto de esos mismos números.</span>
+          <a href="#" onclick="calcularSumaProducto2()" class="btn btn-primary">
+            Calcular
+          </a>
+        </li>
+        <li class="list-group-item">
+          <span class="description">Calcula el aumento de sueldo teniendo en cuenta el sueldo base y la antigüedad.</span>
+          <a href="#" onclick="calcularAumentoSueldo()" class="btn btn-primary">
+            Calcular
+          </a>
+        </li>
+        <li class="list-group-item">
+          <span class="description">Imprime una serie de numeros en incrementos de 11 en 11, desde 11 hasta el 275.</span>
+          <a href="#" onclick="imprimirSerie()" class="btn btn-primary">
+            Imprimir
+          </a>
+        </li>
+        <li class="list-group-item">
+          <span class="description">Cuenta la cantidad de valores negativos, positivos, multiplos de 15 y suma los numeros pares de 10 numeros ingresados</span>
+          <a href="#" onclick="contarValores()" class="btn btn-primary">
+            Contar
+          </a>
+        </li>
+        <li class="list-group-item">
+          <span class="description">Muestra una secuencia de numeros enteros entre dos numeros, ingrese numero inicial y final.</span>
+          <a href="#" onclick="mostrarSecuencia()" class="btn btn-primary">
+            Mostrar
+          </a>
+        </li>
+        <li class="list-group-item">
+          <span class="description">Ordena tres numeros de menor a mayor.</span>
+          <a href="#" onclick="ordenarNumeros()" class="btn btn-primary">
+            Ordenar
+          </a>
+        </li>
+        <li class="list-group-item">
+          <span class="description">Calcula el valor acumulado de un vector, el valor acumulado de los elementos mayores a 36 y cuenta los valores mayores a 50.</span>
+          <a href="#" onclick="calcularValoresVector()" class="btn btn-primary">
+            Calcular
+          </a>
+        </li>
+        <li class="list-group-item">
+          <span class="description">Seleccione cualquier boton</span>
+          <a href="#" class="btn btn-success" id="boton1" onclick="botonPresionado(event)">
+            Boton 1
+          </a>
+          <a href="#" class="btn btn-danger" id="boton2" onclick="botonPresionado(event)">
+            Boton 2
+          </a>
+          <a href="#" class="btn btn-warning" id="boton3" onclick="botonPresionado(event)">
+            Boton 3
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div id="result-container" class="mt-4"></div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
+
+
