@@ -214,7 +214,7 @@ const calcularValoresVector = () => {
 
 
   
-  let mayores50 = vector.reduce((a, b) => b > 50 ? a + b: a, 0);
+  let mayores50 = vector.reduce((count, value) => value > 50 ? count + 1 : count, 0);
 
   alert(`
   Vector: ${vector}
