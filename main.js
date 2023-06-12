@@ -1,6 +1,8 @@
 // Se deben crear todas las restricciones en caso que los valores ingresados
 // no sean los correctos (int cuando corresponda, string cuando corresponda)
 // Restricciones creadas hasta el ejercicio 10
+// Restriccion creada para evitar que la pagina vuelva al inicio
+// Mayor legibilidad en las salidas por alert()
 // Faltan 5 ejercicios.
 
 
@@ -17,7 +19,7 @@ function calcularPerimetro() {
   }
 
   let perimetro = lado * 4;
-  alert("El perímetro del cuadrado es: " + perimetro);
+  alert("El perímetro del cuadrado de " + lado + " es: " + perimetro);
 }
 
 // 2) Calcular suma y producto
@@ -34,9 +36,14 @@ function calcularSumaProducto() {
 
   let suma = num1 + num2;
   let producto = num3 * num4;
-  alert("La suma de los dos primeros numeros es: " + suma);
-  alert("El producto del tercer y cuarto número es: " + producto);
-}
+  alert(`
+  Numero 1: ${num1}
+  Numero 2: ${num2}
+  Numero 3: ${num3}
+  Numero 4: ${num4}
+  La suma de los dos primeros numeros es: ${suma}
+  El producto del tercer y cuarto numero es: ${producto}`);
+}  
 
 
 // 3) Calcular suma y producto (4 valores)
@@ -53,10 +60,14 @@ function calcularSumaProducto2() {
 
   let suma = num1 + num2 + num3 + num4;
   let producto = num1 * num2 * num3 * num4;
-  alert("La suma de los cuatro números es: " + suma);
-  alert("El producto de los cuatro números es: " + producto);
-}
-
+  alert(`
+  Numero 1: ${num1}
+  Numero 2: ${num2}
+  Numero 3: ${num3}
+  Numero 4: ${num4}
+  La suma de los cuatro numeros es: ${suma}
+  El producto de los cuatro numeros es: ${producto}`);
+}  
 
 // 4) Calcular aumento de sueldo
 function calcularAumentoSueldo() {
@@ -79,7 +90,7 @@ function calcularAumentoSueldo() {
     sueldoFinal = sueldo;
   }
 
-  alert("El sueldo a pagar es: " + sueldoFinal);
+  alert("El sueldo actualizado a pagar es: " + sueldoFinal);
 }
 
   
@@ -125,10 +136,12 @@ function contarValores() {
     }
   }
 
-  alert("Cantidad de valores negativos: " + negativos);
-  alert("Cantidad de valores positivos: " + positivos);
-  alert("Cantidad de múltiplos de 15: " + multiplos15);
-  alert("Valor sumado de los números pares: " + acumuladoPares);
+  alert(`
+  Cantidad de valores negativos: ${negativos}
+  Cantidad de valores positivos: ${positivos}
+  Cantidad de múltiplos de 15: ${multiplos15}
+  Valor sumado de los números pares: ${acumuladoPares}`
+  );
 }
 
 // 7) Mostrar secuencia
@@ -178,10 +191,10 @@ const calcularValoresVector = () => {
   let vector = [];
 
   for (let i = 0; i < 8; i++) {
-    let valor = parseFloat(prompt("Ingrese el valor ${i + 1}:"));
+    let valor = parseFloat(prompt("Ingrese el valor: "+ (i + 1)));
 
     if (isNaN(valor)) {
-      alert("Por favor, ingrese un valor numérico válido.");
+      alert("Por favor, ingrese un valor numerico valido.");
       return;
     }
 
@@ -203,22 +216,35 @@ const calcularValoresVector = () => {
   
   let mayores50 = vector.reduce((a, b) => b > 50 ? a + b: a, 0);
 
-  alert("Valor acumulado de todos los elementos del vector: " + acumuladoTotal);
-  alert("Valor acumulado de los elementos mayores a 36: " + acumuladoMayores36);
-  alert("Cantidad de valores mayores a 50: " + mayores50);
-};
+  alert(`
+  Vector: ${vector}
+  Valor acumulado de todos los elementos del vector: ${acumuladoTotal}
+  Valor acumulado de los elementos mayores a 36: ${acumuladoMayores36}
+  Cantidad de valores mayores a 50: ${mayores50}`
+  );
+}
 
 
 
 // 10) Mostrar boton presionado
 function botonPresionado(event) {
-    const botonId = event.target.id;
-    
-    if (botonId === 'boton1') {
-      alert('Presionaste el Boton 1');
-    } else if (botonId === 'boton2') {
-      alert('Presionaste el Boton 2');
-    } else if (botonId === 'boton3') {
-      alert('Presionaste el Boton 3');
-    }
+  const botonId = event.target.id;
+  
+  if (botonId === 'boton1') {
+    alert('Presionaste el Boton 1');
+  } else if (botonId === 'boton2') {
+    alert('Presionaste el Boton 2');
+  } else if (botonId === 'boton3') {
+    alert('Presionaste el Boton 3');
   }
+ }
+
+
+// Evita que la pagina se desplace hasta el inicio cada vez que usamos una funcion
+
+document.addEventListener("click", function(event) {
+  if (event.target.classList.contains("btn")) { // Si alguna clase que contiene "btn" se le da click se ejecuta el evento preventDefault.
+    event.preventDefault();
+  }
+});
+
