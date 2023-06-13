@@ -301,6 +301,7 @@ function duplicarNumero() {
 }
     
 
+
 // Evita que la pagina se desplace hasta el inicio cada vez que usamos una funcion
 
 document.addEventListener("click", function(event) {
