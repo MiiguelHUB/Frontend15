@@ -240,6 +240,67 @@ function botonPresionado(event) {
  }
 
 
+ // 11) Calcular el presupuesto
+
+ // Obtener referencias a los elementos del DOM
+const procesadorSelect = document.getElementById('procesadorSelect');
+const monitorSelect = document.getElementById('monitorSelect');
+const discoSelect = document.getElementById('discoSelect');
+const calcularButton = document.getElementById('calcularButton');
+
+// Asociar evento al boton de calcular
+calcularButton.addEventListener('click', calcularPresupuesto);
+
+// Funcion para calcular el presupuesto
+function calcularPresupuesto() {
+  // Obtener los valores seleccionados
+  const procesadorValor = obtenerValorSeleccionado(procesadorSelect);
+  const monitorValor = obtenerValorSeleccionado(monitorSelect);
+  const discoValor = obtenerValorSeleccionado(discoSelect);
+
+  // Calcular el presupuesto total
+  const presupuestoTotal = procesadorValor + monitorValor + discoValor;
+
+  // Mostrar el presupuesto mediante un alert
+  alert(`Presupuesto: $${presupuestoTotal}`);
+}
+
+// Funcion para obtener el valor seleccionado de un elemento select
+function obtenerValorSeleccionado(selectElement) {
+  return parseInt(selectElement.value);
+}
+
+
+// 12) Ingresar clave y contraseña
+
+const claveInput = document.getElementById('clave');
+const claveError = document.getElementById('claveError');
+
+claveInput.addEventListener('blur', verificarClave);
+
+function verificarClave() {
+  const clave = claveInput.value;
+    if (clave.length < 7 || clave.length > 20) {
+      claveError.textContent = 'La clave debe tener entre 7 y 20 caracteres.';
+      } else {
+      claveError.textContent = '';
+      }
+    }
+
+
+
+// 13) Duplicar numero haciendo doble click
+const numeroDiv = document.getElementById('numeroDiv');
+
+numeroDiv.addEventListener('dblclick', duplicarNumero);
+    
+function duplicarNumero() {
+  const numeroActual = parseInt(numeroDiv.textContent);
+  const nuevoNumero = numeroActual * 2;
+  numeroDiv.textContent = nuevoNumero;
+}
+    
+
 // Evita que la pagina se desplace hasta el inicio cada vez que usamos una funcion
 
 document.addEventListener("click", function(event) {
